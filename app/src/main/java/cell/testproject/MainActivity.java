@@ -55,8 +55,6 @@ public class MainActivity extends Activity {
 
     //Event listener for button
     public void buttonOnClick(View v) {
-        Button button = (Button) v;
-        ((Button) v).setText("clicked");
         if (songSelect == 1) duel.start();
         if (songSelect == 2) pylons.start();
     }
