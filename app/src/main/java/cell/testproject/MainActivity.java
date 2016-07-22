@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends Activity {
+    //Initialise spinner and adapter
     Spinner spinner;
     ArrayAdapter<CharSequence> adapter;
 
@@ -21,14 +22,18 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //Setting up spinner and functionality
         spinner = (Spinner)findViewById(R.id.spinner);
         adapter = ArrayAdapter.createFromResource(this, R.array.audio_files,android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
+
+        //Event listener for spinner
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View v, int i, long l) {
                 Toast.makeText(getBaseContext(), parent.getItemAtPosition(i)+" selected",Toast.LENGTH_SHORT).show();
+
             }
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
@@ -37,6 +42,7 @@ public class MainActivity extends Activity {
         });
     }
 
+    //Event listener for button
     public void buttonOnClick(View v) {
         Button button = (Button) v;
         ((Button) v).setText("clicked");
