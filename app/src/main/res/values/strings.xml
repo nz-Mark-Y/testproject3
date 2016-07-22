@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">testproject</string>
     <string name="press_play">Press Play!</string>
+    <string-array name="audio_files">
+        <item>Maximum</item>
+        <item>Duel</item>
+        <item>Pylons</item>
+    </string-array>
 </resources>
