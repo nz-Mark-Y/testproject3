@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">testproject</string>
+    <string name="press_play">Press Play!</string>
 </resources>
