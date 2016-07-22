@@ -1,6 +1,7 @@
 package cell.testproject;
 
 import android.app.Activity;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -13,14 +14,24 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends Activity {
+    int songSelect;
+
     //Initialise spinner and adapter
     Spinner spinner;
     ArrayAdapter<CharSequence> adapter;
+
+    //Initialise MediaPlayer
+    MediaPlayer duel;
+    MediaPlayer pylons;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //Setting up MediaPlayer
+        duel = MediaPlayer.create(this, R.raw.duel);
+        pylons = MediaPlayer.create(this, R.raw.pylons);
 
         //Setting up spinner and functionality
         spinner = (Spinner)findViewById(R.id.spinner);
@@ -33,7 +44,7 @@ public class MainActivity extends Activity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View v, int i, long l) {
                 Toast.makeText(getBaseContext(), parent.getItemAtPosition(i)+" selected",Toast.LENGTH_SHORT).show();
-
+                songSelect = i;
             }
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
@@ -46,6 +57,8 @@ public class MainActivity extends Activity {
     public void buttonOnClick(View v) {
         Button button = (Button) v;
         ((Button) v).setText("clicked");
+        if (songSelect == 1) duel.start();
+        if (songSelect == 2) pylons.start();
     }
 
 }
