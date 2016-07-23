@@ -23,6 +23,7 @@ public class MainActivity extends Activity {
     //Initialise MediaPlayer
     MediaPlayer duel;
     MediaPlayer pylons;
+    MediaPlayer shame;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +33,7 @@ public class MainActivity extends Activity {
         //Setting up MediaPlayer
         duel = MediaPlayer.create(this, R.raw.duel);
         pylons = MediaPlayer.create(this, R.raw.pylons);
+        shame = MediaPlayer.create(this, R.raw.shame);
 
         //Setting up spinner and functionality
         spinner = (Spinner)findViewById(R.id.spinner);
@@ -57,6 +59,6 @@ public class MainActivity extends Activity {
     public void buttonOnClick(View v) {
         if (songSelect == 1) duel.start();
         if (songSelect == 2) pylons.start();
+        if (songSelect == 3) shame.start();
     }
-
 }
