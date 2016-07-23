@@ -21,6 +21,7 @@ public class MainActivity extends Activity {
     ArrayAdapter<CharSequence> adapter;
 
     //Initialise MediaPlayer
+    MediaPlayer maximum;
     MediaPlayer duel;
     MediaPlayer pylons;
     MediaPlayer shame;
@@ -31,6 +32,7 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         //Setting up MediaPlayer
+        maximum = MediaPlayer.create(this, R.raw.maximum);
         duel = MediaPlayer.create(this, R.raw.duel);
         pylons = MediaPlayer.create(this, R.raw.pylons);
         shame = MediaPlayer.create(this, R.raw.shame);
@@ -57,6 +59,7 @@ public class MainActivity extends Activity {
 
     //Event listener for button
     public void buttonOnClick(View v) {
+        if (songSelect == 0) maximum.start();
         if (songSelect == 1) duel.start();
         if (songSelect == 2) pylons.start();
         if (songSelect == 3) shame.start();
