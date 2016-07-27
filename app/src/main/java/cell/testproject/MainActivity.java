@@ -1,4 +1,4 @@
-package cell.testproject; //DarkLord was here
+package cell.testproject; 
 
 import android.app.Activity;
 import android.media.MediaPlayer;
@@ -29,6 +29,7 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         //Setting up imageView
+
         final ImageView imageView = (ImageView) findViewById(R.id.imageView);
 
         //Setting up MediaPlayer
