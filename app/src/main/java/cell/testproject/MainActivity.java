@@ -6,12 +6,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class MainActivity extends Activity {
     int songSelect;
@@ -31,6 +28,9 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //Setting up imageView
+        final ImageView imageView = (ImageView) findViewById(R.id.imageView);
+
         //Setting up MediaPlayer
         maximum = MediaPlayer.create(this, R.raw.maximum);
         duel = MediaPlayer.create(this, R.raw.duel);
@@ -49,6 +49,10 @@ public class MainActivity extends Activity {
             public void onItemSelected(AdapterView<?> parent, View v, int i, long l) {
                 Toast.makeText(getBaseContext(), parent.getItemAtPosition(i)+" selected",Toast.LENGTH_SHORT).show();
                 songSelect = i;
+                if (songSelect == 0) imageView.setImageResource(R.drawable.maximum);
+                if (songSelect == 1) imageView.setImageResource(R.drawable.duel);
+                if (songSelect == 2) imageView.setImageResource(R.drawable.pylons);
+                if (songSelect == 3) imageView.setImageResource(R.drawable.shame);
             }
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {

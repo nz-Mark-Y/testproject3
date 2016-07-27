@@ -37,4 +37,13 @@
         android:layout_alignParentBottom="true"
         android:textSize="30dp"
         android:onClick="buttonOnClick" />
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/imageView"
+        android:layout_below="@+id/spinner"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="42dp"
+        android:layout_above="@+id/button" />
 </RelativeLayout>
