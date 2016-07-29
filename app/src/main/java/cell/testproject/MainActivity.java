@@ -1,4 +1,4 @@
-package cell.testproject; 
+package cell.testproject;
 
 import android.app.Activity;
 import android.media.MediaPlayer;
@@ -22,6 +22,7 @@ public class MainActivity extends Activity {
     MediaPlayer duel;
     MediaPlayer pylons;
     MediaPlayer shame;
+    MediaPlayer my_nigga;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +38,7 @@ public class MainActivity extends Activity {
         duel = MediaPlayer.create(this, R.raw.duel);
         pylons = MediaPlayer.create(this, R.raw.pylons);
         shame = MediaPlayer.create(this, R.raw.shame);
+        my_nigga = MediaPlayer.create(this, R.raw.my_nigga);
 
         //Setting up spinner and functionality
         spinner = (Spinner)findViewById(R.id.spinner);
@@ -54,6 +56,7 @@ public class MainActivity extends Activity {
                 if (songSelect == 1) imageView.setImageResource(R.drawable.duel);
                 if (songSelect == 2) imageView.setImageResource(R.drawable.pylons);
                 if (songSelect == 3) imageView.setImageResource(R.drawable.shame);
+                if (songSelect == 4) imageView.setImageResource(R.drawable.my_nigga);
             }
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
@@ -68,5 +71,6 @@ public class MainActivity extends Activity {
         if (songSelect == 1) duel.start();
         if (songSelect == 2) pylons.start();
         if (songSelect == 3) shame.start();
+        if (songSelect == 4) my_nigga.start();
     }
 }
